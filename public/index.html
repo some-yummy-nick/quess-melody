@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -15,6 +15,7 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link href="css/style.css" rel="stylesheet">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -28,6 +29,17 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <main class="app">
+    <svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; left: -1200em;">
+      <filter id="blur">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="5"></feGaussianBlur>
+        <feOffset dx="0" dy="0"></feOffset>
+        <feMerge>
+          <feMergeNode></feMergeNode>
+          <feMergeNode in="SourceGraphic"></feMergeNode>
+        </feMerge>
+      </filter>
+    </svg>
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -39,5 +51,15 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    </main>
+    <footer class="footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+        <img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="Creative Commons License" width="88" height="31" style="border-width:0">
+      </a>
+      <section class="copyright">
+        <a class="copyright__logo" href="https://htmlacademy.ru"><img src="img/logo-htmla.svg" width="144" height="49" alt="HTML Academy"></a>
+        <p class="copyright__text">Сделано в <a class="copyright__link" href="https://htmlacademy.ru">HTML Academy</a></p>
+      </section>
+    </footer>
   </body>
 </html>

@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArtistQuestionScreen correctly renders after relaunch 1`] = `
+Array [
+  <h2
+    className="game__title"
+  >
+    Кто исполняет эту песню?
+  </h2>,
+  <div
+    className="game__track"
+  >
+    <div
+      className="track"
+    />
+  </div>,
+  <form
+    className="game__artist"
+  >
+    <div
+      className="artist"
+    >
+      <input
+        className="artist__input visually-hidden"
+        id="answer-1"
+        name="answer"
+        onChange={[Function]}
+        type="radio"
+        value="answer-0"
+      />
+      <label
+        className="artist__name"
+        htmlFor="answer-1"
+      >
+        <img
+          alt="John Snow"
+          className="artist__picture"
+          src="picture"
+        />
+        John Snow
+      </label>
+    </div>
+  </form>,
+]
+`;
