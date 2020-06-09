@@ -4,7 +4,6 @@ import {
   RESET,
   GameType,
   LOAD_QUESTIONS,
-  REQUIRED_AUTHORIZATION
 } from "../constants";
 
 const isArtistAnswerCorrect = (question, userAnswer) => userAnswer.artist === question.song.artist;
@@ -50,11 +49,6 @@ export const ActionCreator = {
   loadQuestions: (questions) => ({
     type: LOAD_QUESTIONS,
     payload: questions
-  }),
-
-  requiredAuthorization: (status) => ({
-    type: REQUIRED_AUTHORIZATION,
-    payload: status
   }),
 
 };

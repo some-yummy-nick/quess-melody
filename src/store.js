@@ -7,4 +7,3 @@ const store = createStore(reducer, middleware);
 export default store;
 
 store.dispatch(Operation.loadQuestions());
-store.dispatch(Operation.checkAuth());

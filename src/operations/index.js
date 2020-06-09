@@ -8,17 +8,7 @@ export const Operation = {
                 dispatch(ActionCreator.loadQuestions(response.data));
             });
     },
-    checkAuth: () => {
-        return (dispatch, _getState, api) => {
-            return api
-                .get(`/login`)
-                .then((res) => {
-                    if (res.status === 200) {
-                        dispatch(ActionCreator.requiredAuthorization(AuthorizationStatus.AUTH));
-                    }
-                });
-        };
-    },
+
     login: (authData) => {
         return (dispatch, _getState, api) => {
             return api
@@ -28,7 +18,7 @@ export const Operation = {
                 })
                 .then((res) => {
                     if (res.status === 200) {
-                        dispatch(ActionCreator.requiredAuthorization(AuthorizationStatus.AUTH));
+                        localStorage.setItem("authorizationStatus", AuthorizationStatus.AUTH);
                     }
                 });
         };

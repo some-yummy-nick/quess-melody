@@ -7,7 +7,7 @@ export const PrivateRoute = ({component: Component, authorizationStatus, ...rest
         {...rest}
         exact
         render={props => (
-            authorizationStatus === AuthorizationStatus.AUTH
+            localStorage.getItem("authorizationStatus") === AuthorizationStatus.AUTH
                 ? <Component {...props} />
                 : <Redirect to="/login"/>
         )}

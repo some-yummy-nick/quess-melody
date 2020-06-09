@@ -1,4 +1,4 @@
-import {INCREMENT_STEP, INCREMENT_MISTAKES, RESET, LOAD_QUESTIONS, REQUIRED_AUTHORIZATION} from "../constants";
+import {INCREMENT_STEP, INCREMENT_MISTAKES, RESET, LOAD_QUESTIONS} from "../constants";
 import {initialState} from "../state";
 
 export const reducer = (state = initialState, action) => {
@@ -19,11 +19,6 @@ export const reducer = (state = initialState, action) => {
         case LOAD_QUESTIONS:
             return Object.assign({}, state, {
                 questions: action.payload,
-            });
-
-        case REQUIRED_AUTHORIZATION:
-            return Object.assign({}, state, {
-                authorizationStatus: action.payload,
             });
 
         default:
