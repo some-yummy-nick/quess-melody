@@ -56,4 +56,5 @@ export const ActionCreator = {
     type: REQUIRED_AUTHORIZATION,
     payload: status
   }),
+
 };

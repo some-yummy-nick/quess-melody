@@ -7,7 +7,7 @@ import Timer from "../Timer/Timer";
 export const QuestionScreen = ({genre, children}) =>
     <section className={`game game--${genre}`}>
         <header className="game__header">
-            <a className="game__back" href="#">
+            <a className="game__back" href="/">
                 <span className="visually-hidden">Сыграть ещё раз</span>
                 <img className="game__logo" src="img/melody-logo-ginger.png" alt="Угадай мелодию"/>
             </a>

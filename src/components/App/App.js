@@ -13,7 +13,7 @@ import WithActivePlayer from "../../hocs/WithActivePlayer/WithActivePlayer";
 import AuthorizationScreen from "../AuthorizationScreen/AuthorizationScreen";
 import {NoMatch} from "../NoMatch/NoMatch";
 import {Secret} from "../Secret/Secret";
-import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import {PrivateRoute} from "../PrivateRoute/PrivateRoute";
 
 const GenreQuestionScreenWrapped = WithActivePlayer(GenreQuestionScreen);
 const ArtistQuestionScreenWrapped = WithActivePlayer(ArtistQuestionScreen);
@@ -47,11 +47,12 @@ class App extends PureComponent {
     }
 
     render() {
+        const {authorizationStatus}= this.props;
         return <Router>
             <Switch>
                 <Route path="/" exact render={() => this.renderGameScreen()}/>
                 <Route path="/login" exact component={AuthorizationScreen}/>
-                <PrivateRoute path="/secret" render={() => <Secret/>}/>
+                <PrivateRoute authorizationStatus={authorizationStatus} path="/secret" component={() => (<Secret/>)}/>
                 <Route path="*" component={NoMatch}/>
             </Switch>
         </Router>
@@ -85,6 +86,7 @@ const mapStateToProps = state => ({
     questions: state.questions,
     maxMistakes: state.maxMistakes,
     gameTime: state.gameTime,
+    authorizationStatus: state.authorizationStatus,
 });
 
 const mapDispatchToProps = (dispatch) => ({
